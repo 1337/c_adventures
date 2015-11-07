@@ -6,7 +6,7 @@ CC ?= cc
 all:
 
 build:
-	splint -strict-lib -strict -warnmissingglobs -mods -internalglobs -globs ex && $(MAKE) --silent ex
+	splint -strict-lib -strict -warnmissingglobs -mods -internalglobs -globs -stringliteralsmaller ex && $(MAKE) --silent ex
 	
 bugcheck:
 	valgrind -q ./ex
@@ -17,3 +17,4 @@ run:
 clean:
 	# This is how you declare a `make clean` yo
 	rm -f ex
+	rm -f *.out

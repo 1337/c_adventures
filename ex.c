@@ -1,12 +1,18 @@
+#include <assert.h>
 #include <stdio.h>
+#include "banned.h"
 
 int main(void) {
-	char letters1[] = {'a', 'b', 'c', '\0'};
-	char letters2[] = "Hello";
-	char *letters3 = "World";
+	int number_of_words = 4;
 	
-	(void) printf("%s %s\n", letters2, letters3);
-	(void) printf("%s", letters1);
+	/* What the hell is an observer */
+	/*@observer@*/
+	char words[4][6] = {"a", "bunch", "of", "words"};
+
+	int idx = 0;
+	for (idx = 0; idx < number_of_words; idx++) {
+		(void) printf("%s ", words[idx]);
+	}
 
 	return 0;
 }
