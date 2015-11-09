@@ -1,3 +1,5 @@
 ex
 ex.lcs
 .idea/
+*.kate-swp
+*.plist

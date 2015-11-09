@@ -4,7 +4,9 @@ Learning C harder than [Learn C the Hard Way][2].
 
 ## Installing
 
-`sudo apt-get install build-essential splint valgrind`
+* Clang 3.4
+
+`sudo apt-get install build-essential clang splint valgrind`
 
 ## Running
 

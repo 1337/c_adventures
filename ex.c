@@ -1,18 +1,21 @@
 #include <assert.h>
+#include <errno.h>
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "banned.h"
+#include "item_at.h"
 
-int main(void) {
-	int number_of_words = 4;
-	
-	/* What the hell is an observer */
-	/*@observer@*/
-	char words[4][6] = {"a", "bunch", "of", "words"};
 
+int main(int argc, char *argv[]) {
 	int idx = 0;
-	for (idx = 0; idx < number_of_words; idx++) {
-		(void) printf("%s ", words[idx]);
+	if (argc == 0) {
+		(void) printf("Eh");
+		exit(EXIT_FAILURE);
 	}
 
+	for (; idx < argc; idx++) {
+		(void) printf("%d %s", eh(), argv[idx]);
+	}
 	return 0;
 }

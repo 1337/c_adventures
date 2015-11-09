@@ -1,13 +1,14 @@
-CFLAGS=-Wall -Wextra -Werror -std=c99 -pedantic -g3
+CFLAGS=-std=c99 -Wall -Wextra -Werror -Wformat -Wformat-security -pedantic -pedantic-errors -g3 -O3
 CC ?= cc
 
 .DEFAULT_GOAL := build
+.PHONY: clean
 
 all:
 
 build:
-	splint -strict-lib -strict -warnmissingglobs -mods -internalglobs -globs -stringliteralsmaller ex && $(MAKE) --silent ex
-	
+	splint -strict-lib -checks ex && clang --analyze ./*.c && $(MAKE) --silent ex
+
 bugcheck:
 	valgrind -q ./ex
 
